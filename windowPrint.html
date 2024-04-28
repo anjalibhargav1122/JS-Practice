@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Print</title>
+</head>
+
+<body >
+    <center>
+        <h2>ANJALI </h2>
+        <q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vitae voluptatum sed autem ullam temporibus
+            sit fugiat tempora commodi quae quia magni similique voluptate, aliquam itaque reiciendis vero earum
+            officiis.</q>
+        <p id="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non laboriosam maxime placeat neque
+            dolorem. Porro
+            molestias odio fuga velit repudiandae, itaque non excepturi expedita perferendis maxime cumque quasi!
+            Doloribus, nostrum reprehenderit placeat, unde quisquam voluptate labore sequi adipisci quod aspernatur
+            optio ratione earum sapiente iure odit nam maxime totam in.</p>
+        <button onclick="printPj()">Print Content</button>
+    </center>
+
+    <script>
+
+        function printPj() {
+
+            const bod = document.body.innerHTML;
+            const lor = document.getElementById("lorem").innerHTML;
+
+            document.body.innerHTML = lor;
+            window.print();
+
+            document.body.innerHTML = bod;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

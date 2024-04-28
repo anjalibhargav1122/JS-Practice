@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Validation</title>
+</head>
+
+<body>
+
+    <span>Please Enter Your Number:</span><br />
+    <input type="text" onkeyup="cek(this)">
+    <div id="res"></div>
+
+    <script>
+
+        function cek(elm) {
+
+            document.getElementById("res").style.color = "red";
+
+            if (isNaN(elm.value)) {
+
+                document.getElementById("res").innerText = "Please Enter Number";
+            }
+
+            else {
+
+                document.getElementById("res").innerText = "";
+
+                if (elm.value.length > 10) {
+
+                    document.getElementById("res").innerText = "Please Enter only Ten Digits";
+                }
+
+                else {
+
+                    document.getElementById("res").innerText = "";
+                }
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

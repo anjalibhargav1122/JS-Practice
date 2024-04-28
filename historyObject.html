@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+</head>
+
+<body>
+
+    <h1 id="show"></h1>
+
+    <button onclick="window.history.forward()">Forward</button>
+    <button onclick="window.history.back()">Back</button>
+
+    <!-- like mobile's google -->
+
+    <button onclick="window.history.go(1)">Specific URL (Go +ve)</button>
+    <button onclick="window.history.go(-1)">Specific URL (Go -ve)</button>
+
+    <!-- like array's index  -->
+
+    <script>
+
+        let count = window.history.length;
+
+        document.getElementById("show").innerText = count;
+
+    </script>
+
+</body>
+
+</html>

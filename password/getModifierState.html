@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning CapsLock</title>
+</head>
+
+<body>
+
+    <form>
+
+        <fieldset>
+
+            <legend>Form</legend>
+
+            Please Enter Password:<br />
+            <input type="password"><br />
+
+            Please Enter Confirm Password:<br />
+            <input type="password"><br />
+
+            <div></div><br />
+
+            <input type="submit">
+
+        </fieldset>
+
+    </form>
+
+
+    <script>
+
+
+        document.getElementsByTagName("div")[0].style.color = "red";
+
+        window.addEventListener("keyup", event => {
+
+            let isVal = event.getModifierState("CapsLock");
+            if (isVal) {
+
+                document.getElementsByTagName("div")[0].innerText = "WARNINg! CapsLock is ON";
+            }
+            else {
+
+                document.getElementsByTagName("div")[0].innerText = "";
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

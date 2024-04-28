@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+</head>
+
+<body>
+
+    <center>
+        <form action="">
+            <fieldset>
+
+                <legend>Login form</legend>
+                E-mail:<br />
+                <input type="email"><br />
+                Password:<br />
+
+                <input type="password" id="pass"><br /> <button onclick="toggle(this)">Show Password</button>
+                <input type="submit" value="Log in"><br />
+
+            </fieldset>
+        </form>
+    </center>
+
+
+    <script>
+
+        let inp = document.getElementById("pass");
+
+        function toggle(elm) {
+
+            let typ = inp.getAttribute("type");
+
+            if (typ === "Password") {
+
+                inp.setAttribute("type", "text");
+                elm.innerText = "hide Password";
+            }
+
+            else {
+
+                inp.setAttribute("type", "password");
+                elm.innerText = "Show Password";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Modify</title>
+
+    <style>
+        .center {
+            text-align: center;
+            font-size: 40px;
+            margin-top: 60px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: red;
+            transition: 1s;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1 class="center" onmouseenter="change()" onmouseleave="add()">Css Modify By Mouse Event</h1>
+
+
+    <script>
+
+        function change() {
+
+            let h1 = document.getElementsByClassName("center")[0];
+            h1.style.fontSize = "60px";
+            h1.style.fontFamily = "cursive";
+            h1.style.color = "blue";
+            h1.style.textShadow = "";
+
+        }
+
+        function add() {
+
+            let h1 = document.getElementsByClassName("center")[0];
+            h1.style.textShadow = "3px 2px 8px blue";
+            h1.style.fontSize = "50px";
+            h1.style.color = "";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

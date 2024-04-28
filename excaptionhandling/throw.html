@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-defined</title>
+</head>
+
+<body>
+
+    Plaese Enter Number between 5 to 10:<br />
+    <input type="text" name="num" onkeyup="ck()"><br />
+
+    <h1 id="res"></h1>
+
+    <script>
+
+        let nm = document.getElementsByName("num");
+        document.getElementById("res").style.color =  "red";
+
+        function ck() {
+
+            try {
+                if (isNaN(nm.value)) {
+                    throw "This is not a Number.";
+                }
+
+                else {
+
+                    if (nm.value < 5 || nm.value > 10) {
+                        throw "This is out of range.";
+                    }
+
+                    else {
+                        throw "";
+                    }
+                }
+            }
+
+            catch (err) {
+
+                document.getElementById("res").innerText = err;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

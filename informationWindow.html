@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Information</title>
+</head>
+
+<body>
+
+    <h1></h1>
+
+    <button onclick="tolHei()">Browser's Total Height</button>
+    <button onclick="tolWid()">Browser's Total Width</button>
+    <button onclick="avlHei()">Browser's Available Height</button>
+    <button onclick="avlWid()">Browser's Available Width</button>
+    <button onclick="pxDept()">Pixel Depth</button>
+    <button onclick="clrDept()">Color Depth</button>
+
+
+    <script>
+
+        var show;
+
+        function tolHei() {
+
+            show = screen.height;
+            console.log(show);
+            document.getElementsByTagName("h1")[0].innerText = show + "px";
+
+        }
+
+        function avlHei() {
+
+            show = screen.availHeight;
+            document.getElementsByTagName("h1")[0].innerText = show + "px";
+
+        }
+
+        function tolWid() {
+
+            show = screen.width;
+            document.getElementsByTagName("h1")[0].innerText = show + "px";
+
+        }
+
+        function avlWid() {
+
+            show = screen.availWidth;
+            document.getElementsByTagName("h1")[0].innerText = show + "px";
+
+        }
+
+        function clrDept() {
+
+            show = screen.colorDepth;
+            document.getElementsByTagName("h1")[0].innerText = show;
+
+        }
+
+        function pxDept() {
+
+            show = screen.pixelDepth;
+            document.getElementsByTagName("h1")[0].innerText = show;
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Password</title>
+</head>
+<body>
+
+<form action="#" method="post" onsubmit="return tf()">
+    
+    <fieldset>
+
+        <legend>Password Check</legend>
+
+        Please Enter Password:<br/>
+        <input type="password" ><br/>
+
+        Please Enter Confirm Password:<br/>
+        <input type="password" onkeyup="ck(this)"><br/>
+
+        <div></div><br/>
+
+        <input type="submit">
+
+    </fieldset>
+    
+</form>
+
+
+<script>
+
+let pass = document.getElementsByTagName("input")[0];
+document.getElementsByTagName("div")[0].style.color = "red";
+var cont = 1;
+
+function ck(elm){
+
+    if(elm.value.length >0){
+
+if(elm.value != pass.value){
+
+    document.getElementsByTagName("div")[0].innerText = "Confirm password does not match.";
+    cont = 0;
+}
+
+else{
+    
+    document.getElementsByTagName("div")[0].innerText = "";
+    cont= 1;
+}
+    }
+
+    else{
+
+        document.getElementsByTagName("div")[0].innerText = "Please enter confirm password";
+        cont = 0;
+    }
+
+}
+
+function tf(){
+
+    if(cont == 1){
+
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+</script>
+
+</body>
+</html>

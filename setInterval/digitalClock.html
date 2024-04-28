@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<body onload="clock()">
+    
+    <h1 class="clock"></h1>
+
+
+<script>
+
+
+function clock(){
+
+    let date = new Date();
+
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let seconds = date.getSeconds();
+
+let session = "AM";
+
+if (hours>=12){
+    session = "PM";
+}
+
+if(hours>12){
+    hours = hours - 12;
+}
+
+
+hours<10 ? hours = `0${hours}` : hours;
+minutes<10 ? minutes = `0${minutes}` : minutes;
+seconds<10 ? seconds = `0${seconds}` : seconds;
+
+
+let show = `${hours} : ${minutes} : ${seconds} ${session}`;
+
+document.getElementsByClassName("clock")[0].innerHTML = show;
+
+setInterval(clock, 1000);
+
+}
+
+
+
+</script>
+
+</body>
+</html>

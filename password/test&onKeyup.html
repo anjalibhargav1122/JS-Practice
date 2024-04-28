@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Space</title>
+</head>
+<body>
+    
+
+    <form>
+
+        <fieldset>
+
+            <legend>Form</legend>
+
+            Please Enter Name:<br />
+            <input type="text" onkeyup="spc(this.value)"><br />
+
+            Please Enter Password:<br />
+            <input type="password"><br />
+
+            <error></error> <br />
+
+            <input type="submit">
+
+        </fieldset>
+
+    </form>
+
+
+    <script>
+
+document.getElementsByTagName("error")[0].style.color= "red";
+
+function spc(data){
+
+    let patrn = /\s/g;
+
+    let is = patrn.test(data);
+
+    if(is){
+
+        document.getElementsByTagName("error")[0].innerText = "Space is not allow";
+    }
+    
+    else{
+
+        document.getElementsByTagName("error")[0].innerText = "";
+    }
+}
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Complete</title>
+</head>
+
+<body>
+
+    <form>
+
+        <fieldset>
+
+            <legend>Form</legend>
+
+            Please Enter Password:<br />
+            <input type="password" onkeyup="ck(this.value)" autocomplete="off"><br />
+
+            Please Enter Confirm Password:<br />
+            <input type="password"><br />
+
+
+            <label class="value">8 Character</label><br />
+
+            <label class="value">Numerical</label><br />
+
+            <label class="value">Lower Case</label><br />
+
+            <label class="value">Upper Case</label><br />
+
+            <label class="value">Special Character</label><br /><br />
+
+            <input type="submit">
+
+        </fieldset>
+
+    </form>
+
+    <script>
+
+        const val = document.getElementsByClassName("value");
+
+        function ck(data) {
+
+            const char8 = new RegExp("(?=.{8,})");
+            const num = new RegExp("(?=.*[0-9])");
+            const lower = new RegExp("(?=.*[a-z])");
+            const upper = new RegExp("(?=.*[A-Z])");
+            const char = new RegExp("(?=.*[~!@#\$%\^&\*_])");
+
+            let is = char8.test(data);
+
+            if (is) {
+                val[0].style.color = "green";
+            }
+            
+            else {
+
+                val[0].style.color = "";
+            }
+
+            let is1 = num.test(data);
+
+            if (is1) {
+                val[1].style.color = "green";
+            }
+
+            else {
+
+                val[1].style.color = "";
+            }
+
+            let is2 = lower.test(data);
+
+            if (is2) {
+                val[2].style.color = "green";
+            }
+
+            else {
+
+                val[2].style.color = "";
+            }
+
+            let is3 = upper.test(data);
+
+            if (is3) {
+                val[3].style.color = "green";
+            }
+
+            else {
+
+                val[3].style.color = "";
+            }
+
+            let is4 = char.test(data);
+
+            if (is4) {
+                val[4].style.color = "green";
+            }
+
+            else {
+
+                val[4].style.color = "";
+            }
+
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
